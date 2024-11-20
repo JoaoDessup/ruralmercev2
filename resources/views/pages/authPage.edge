@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      RuralMerce
+    </title>
+    @vite(['resources/css/global.css', 'resources/css/pages/authPage.css', 'resources/js/global.js'])
+  </head>
+  <body>
+    <div class="authPageContainer">
+        <div class="cardAuth">
+            @if (component === 'login')
+                @include('components/authPage/login')
+            @elseif(component === 'create')
+                @include('components/authPage/create')
+            @end
+        </div>
+    </div>
+  </body>
+</html>
