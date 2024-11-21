@@ -1,13 +1,13 @@
 <div class="authContent">
     <h1 class="authTitle">Crie sua conta</h1>
-    <form class="authForm">
-        <input type="text" placeholder="Nome" required>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Senha" required>
-        <input type="password" placeholder="Confirme sua senha" required>
+    <form class="authForm" action="{{ route('users.store') }}" method="POST">
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Senha" required>
         <button type="submit">Criar</button>
     </form>
     <div class="createAcc">
-        <a href="{{route('auth.login')}}">Já possui conta? <span>Clique aqui.</span></a>
+        <a href="{{ route('auth.login') }}">Já possui conta? <span>Clique aqui.</span></a>
     </div>
 </div>
