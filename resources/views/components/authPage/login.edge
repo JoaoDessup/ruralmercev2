@@ -1,8 +1,9 @@
 <div class="authContent">
     <h1 class="authTitle">Login</h1>
-    <form class="authForm">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Senha" required>
+    <form class="authForm" action="{{ route('auth.store') }}" method="POST">
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Senha" required>
         <button type="submit">Entrar</button>
     </form>
     <div class="createAcc">
